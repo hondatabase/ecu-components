@@ -6,8 +6,9 @@
 	<meta name="description" content="Find all components of OBD0/1/2 Honda ECUs, with their specs and notes.">
 	<meta name="keywords" content="honda, honda tuning, honda ecu, honda engine, honda components, obd0, obd1, obd2, obd2a, obd2b">
 	<meta name="google" content="notranslate">
+	<meta name="author" content="Hondatabase">
 
-	<title>Hondatabase - OBD0/1/2 Honda ECU Component List</title>
+	<title>Honda OBD0/1 ECU Component List - Hondatabase</title>
 
 	<style>
 		body {
@@ -120,13 +121,13 @@
 <body>
 	<header>
 		<span id="author">hondatabase.com</span>
-		<h1>OBD0/1/2 Honda ECU Component List</h1>
-		<p>This table is an ongoing effort to enumerate all components (and their specs) of OBD0/1/2 Honda ECUs. <span style="color: red;">(It has been pointed out that some of this information is mixed up. Take caution.)</span></p>
-		<p>If you would like to share data or simply fix something, <u>please edit each row/cell directly directly and your changes will be submited</u>, as soon as you click out of a row.</p>
+		<h1>Honda OBD0/1 ECU Component List</h1>
+		<p>This page contains a comprehensive list of components found in Honda OBD0 and OBD1 ECUs. Compiled from various sources, it serves as a reference for those working with Honda ECUs.</p>
+		<p>If you would like to share data or fix something, please submit a pull request on GitHub or open an Issue.</p>
 		<p>This page is both print and smaller-device friendly.</p>
 		<small>
-			<p>You can download this list, as JSON, from my <a href="https://gist.github.com/VIRUXE/3187356a6d001f96c0c3a71c43b38ba4" target="_blank" rel="noopener noreferrer">Gist</a> on github.com.</p>
-			<p>If you would like to look at the source images, from where this data was extracted, visit the <a href="images" target="_blank">images</a> directory.</p>
+			<p>You can download this list as JSON from the <a href="hondaecucomponents.json" target="_blank" rel="noopener noreferrer">same directory</a>.</p>
+			<p>To view the source images from which this data was extracted, visit the <a href="https://files.hondatabase.com/ecu-components/componentlist" target="_blank">images</a> directory.</p>
 			<p>For any feedback, please <a href="mailto:hondatabase@flaviopereira.dev?subject=Contribute to Honda ECU Component List">e-mail</a> me.</p>
 		</small>
 	</header>
@@ -148,7 +149,6 @@
 			<ul>
 				<li><strong>OBD0</strong>: N/A</li>
 				<li><strong>OBD1</strong>: 11F0, 1720, 1980</li>
-				<li><strong>OBD2</strong>: N/A</li>
 			</ul>
 		</div>
 	</main>
@@ -160,158 +160,81 @@
 	<footer>
 
 	<script>
-		let user = localStorage.getItem('username');
-
-		function saveRow(index, cells) {
-			if (!user) {
-				while (user === null || user === '') user = prompt('Please enter your name/nickname/e-mail to be credited for your contribution:');
-
-				localStorage.setItem('username', user);
-			}
-
-			const formData = new FormData();
-			formData.append('user', user);
-			formData.append('rowIndex', index);
-			formData.append('rowData', JSON.stringify(Array.from(cells).map(cell => cell.textContent.trim())));
-
-			fetch('componentlist_contribute.php', {
-				method: 'POST',
-				body  : formData
-			}).then(response => {
-				if (response.ok) return;
-				console.error('Failed to save the data:', response);
-				alert(`An error occurred while trying to save the data. Please try again later. (${response.statusText})`);
-			}).catch(error => {
-				console.error('Failed to save the data:', error);
-				alert('An error occurred while trying to save the data. Please try again later.');
-			});
-		}
-
-		function handleRowEdit(event) {
-			const row      = event.target;
-			const rowIndex = Array.from(row.parentElement.children).indexOf(row);
-			const cells    = Array.from(row.children);
-			let   edited  = false;
-		
-			// Check if any cell within the row was edited
-			for (const cell of cells) {
-				const newValue = cell.textContent.trim() || '';
-				const oldValue = cell.dataset.original || '';
-
-				if (newValue != oldValue) {
-					edited = true;
-					break;
-				}
-			}
-		
-			if (!edited) return;
-		
-			let save = confirm('Do you want to save the changes you made to this row?');
-
-			if (save) saveRow(rowIndex, row.children)
-		
-			cells.forEach(cell => {
-				// Only do something with the cells that were edited
-				const newValue = cell.textContent.trim() || '';
-				const oldValue = cell.dataset.original || '';
-
-				if (newValue === oldValue) return;
-
-				if (save) {
-					cell.dataset.original = cell.textContent.trim();
-					cell.style.backgroundColor = 'rgba(241, 93, 93, 0.5)';
-				} else {
-					if(cell.dataset.original) cell.textContent = oldValue;
-					cell.style.backgroundColor = '';
-				}
-			});
-		}
-
-		fetch('hondaecucomponents.json')
+		fetch('./hondaecucomponents.json')
 			.then(data => data.json())
 			.then(json => {
-			// Render rows for all component nodes
-			const tbody = document.getElementsByTagName('tbody')[0];
-	
-			json.components.forEach(componentsNode => {
-				const tr = document.createElement('tr');
+				const tbody = document.getElementsByTagName('tbody')[0];
 
-				tr.setAttribute('contenteditable', 'true');
-				tr.onblur = event => handleRowEdit(event);
-				
-				Object.values(componentsNode).forEach((property, propertyIndex) => {
-					if (propertyIndex > 3) return; // Only render the first 4 properties
+				if (!json.components) return;
 
-					const td = document.createElement('td')
-					let html = property;
-			
-					if (propertyIndex === 0) {
-						html = property.join(', ');
+				json.components.forEach(componentsNode => {
+					const tr = document.createElement('tr');
+
+					Object.values(componentsNode).forEach((property, propertyIndex) => {
+						if (propertyIndex > 3) return;
 						
-						if (componentsNode.boards) {
-							const sup = document.createElement('sup');
-							sup.title     = 'ECU Board(s)';
-							sup.innerHTML = componentsNode.boards.join(', ');
-							html += sup.outerHTML;
-						}
+						let html = property;
+						const td = document.createElement('td');
 
-						td.dataset.original = html;
-					} else if (propertyIndex === 2) {
-						const regex = /\(([^)]*(OHM|A|V|W|uF|pF|MHz)[^)]*)\)/g;
-						let match;
+						if (propertyIndex === 0) {
+							html = property.join(', ');
 
-						while ((match = regex.exec(property)) !== null) {
-							let content = match[1];
-							let symbol  = unit = content.split(' ').pop();
-					
-							switch (unit) {
-								case 'OHM': symbol = 'Ω'; break;
-								case 'A'  : symbol = 'Amps'; break;
-								case 'V'  : symbol = 'Volts'; break;
-								case 'W'  : symbol = 'Watts'; break;
-								case 'uF' : symbol = 'µF'; break;
+							if (componentsNode.boards) {
+								const sup = document.createElement('sup');
+								sup.title = 'ECU Board(s)';
+								sup.innerHTML = componentsNode.boards.join(', ');
+								html += sup.outerHTML;
 							}
 
-							content = content.replace(unit, symbol);
-					
-							html = html.replace(match[0], `<span class="eletrical-spec">${content}</span>`);
+							td.dataset.original = html;
+						} else if (propertyIndex === 2) {
+							const regex = /\(([^)]*(OHM|A|V|W|uF|pF|MHz)[^)]*)\)/g;
+							let match;
 
-							if (td.dataset.original) td.dataset.original += ` ${content}`; else td.dataset.original = content;
+							while (match = regex.exec(property)) {
+								let content = match[1];
+								let unit = content.split(' ').pop();
+								let symbol = unit === 'OHM' ? 'Ω' :
+									unit === 'A' ? 'Amps' :
+									unit === 'V' ? 'Volts' :
+									unit === 'W' ? 'Watts' :
+									unit === 'uF' ? 'µF' : unit;
+								content = content.replace(unit, symbol);
+								html = html.replace(match[0], `<span class="eletrical-spec">${content}</span>`);
+								td.dataset.original = (td.dataset.original || '') + ` ${content}`;
+							}
+						} else {
+							if (property !== '') td.dataset.original = property;
 						}
-					} else {
-						if (property !== '') td.dataset.original = property;
-					}
-			
-					td.innerHTML = html;
-					tr.appendChild(td);
+
+						td.innerHTML = html;
+						tr.appendChild(td);
+					});
+
+					tbody.appendChild(tr);
 				});
-			
-				tbody.appendChild(tr);
-			});
-	
-			// Render credits
-			const credits = document.querySelector('#credits > ul');
-			json.credits.forEach(node => {
-				const li = document.createElement('li');
-	
-				if (node.link) {
-					with (a = document.createElement('a')) {
-						href      = node.link;
-						target    = '_blank';
-						rel       = 'noopener noreferrer';
-						innerHTML = node?.group ? `${node.name} (<i>${node.group}</i>)` : node.name;
-					}
-	
-					li.appendChild(a);
-				} else
-					li.innerHTML = node.name;
-	
-				credits.appendChild(li);
-			});
-		}).catch(error => {
-			console.error('Failed to fetch the data:', error);
-			alert('An error occurred while fetching the data. Please try again later.');
-		});
+				const credits = document.querySelector('#credits > ul');
+
+				if (json.credits) {
+					json.credits.forEach(node => {
+						const li = document.createElement('li');
+
+						if (node.link) {
+							const a = document.createElement('a');
+							
+							a.href = node.link;
+							a.target = '_blank';
+							a.rel = 'noopener noreferrer';
+							a.innerHTML = node.group ? `${node.name} (<i>${node.group}</i>)` : node.name;
+
+							li.appendChild(a);
+						} else
+							li.innerHTML = node.name;
+						
+						credits.appendChild(li);
+					});
+				}
+			}).catch(() => {});
 	</script>
 </body>
 </html>
