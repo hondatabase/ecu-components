@@ -227,7 +227,7 @@
 			});
 		}
 
-		fetch(location.port === 3000 ? 'hondaecucomponents.json' : 'https://gist.githubusercontent.com/VIRUXE/3187356a6d001f96c0c3a71c43b38ba4/raw')
+		fetch('hondaecucomponents.json')
 			.then(data => data.json())
 			.then(json => {
 			// Render rows for all component nodes
