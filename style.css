@@ -1,11 +1,10 @@
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
 }
 
-a { color: #f15d5d; }
+a { color: #E62129; }
 
 #table-container { overflow-x: auto; }
 
@@ -39,7 +38,7 @@ tr:nth-child(odd) { background-color: #f2f2f2; }
 
 tr:not(:has(th)):hover {
     color: white;
-    background-color: #f15d5d;
+    background-color: #E62129;
 }
 
 sup {
