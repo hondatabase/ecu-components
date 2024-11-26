@@ -85,3 +85,14 @@ fetch('./hondaecucomponents.json')
             });
         }
     }).catch(err => console.error('Failed to load components:', err));
+
+document.getElementById('componentSearch').addEventListener('input', e => {
+    const searchTerm      = e.target.value.toLowerCase();
+    const componentGroups = document.getElementsByClassName('component-group');
+    
+    Array.from(componentGroups).forEach(tbody => {
+        const searchText = [...Array.from(tbody.querySelector('.component-row').children).map(cell => cell.dataset.original || cell.textContent), tbody.querySelector('.notes-cell')?.textContent || ''].join(' ').toLowerCase();
+
+        tbody.style.display = searchText.includes(searchTerm) ? '' : 'none';
+    });
+});

@@ -84,6 +84,8 @@ th {
         position: static;
         text-transform: uppercase;
     }
+
+    #search-container { display: none; }
 }
 
 .component-group {
@@ -142,4 +144,24 @@ th {
 
 .honda-link {
     color: var(--honda-red);
+}
+
+#search-container {
+    margin: 1rem 0;
+}
+
+#componentSearch {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+#search-container small {
+    display: block;
+    margin-top: 0.25rem;
+    color: #4b5563;
+    font-size: 0.75rem;
 }
