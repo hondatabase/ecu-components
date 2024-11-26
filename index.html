@@ -10,83 +10,37 @@
 
     <title>Honda OBD0/1 ECU Component List - Hondatabase</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        honda: '#E62129'
-                    },
-                    fontFamily: {
-                        sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif']
-                    },
-                    fontSize: {
-                        'xxs': '0.7rem'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @media print {
-            body { font-size: 0.8rem !important; }
-
-            header p, header small { display: none; }
-
-            a {
-                color: inherit;
-                text-decoration: none;
-            }
-
-            table { 
-                width: 100% !important;
-                min-width: 100% !important;
-                margin-bottom: 2em; 
-            }
-
-            tr { page-break-inside: avoid; }
-
-            span.eletrical-spec { line-height: 2em; }
-
-            #author {
-                position: static;
-                text-transform: uppercase;
-            }
-
-            #legend { position: static; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-sans m-0 p-5">
+<body>
     <header>
-        <span id="author" class="fixed top-1 right-2">hondatabase.com</span>
-        <h1 class="text-2xl font-bold">Honda OBD0/1 ECU Component List</h1>
+        <span id="author">hondatabase.com</span>
+        <h1>Honda OBD0/1 ECU Component List</h1>
         <p>This page contains a comprehensive list of components found in Honda OBD0 and OBD1 ECUs. Compiled from various sources, it serves as a reference for those working with Honda ECUs.</p>
         <p>If you would like to share data or fix something, please submit a pull request on GitHub or open an Issue.</p>
         <p>This page is both print and smaller-device friendly.</p>
         <small>
-            <p>You can download this list as JSON from the <a href="hondaecucomponents.json" class="text-honda" target="_blank" rel="noopener noreferrer">same directory</a>.</p>
-            <p>To edit this list, visit the <a href="https://github.com/hondatabase/ecucomponents/edit/main/hondaecucomponents.json" class="text-honda" target="_blank" rel="noopener noreferrer">JSON file on GitHub</a>.</p>
-            <p>To view the source images from which this data was extracted, visit the <a href="https://files.hondatabase.com/ecu-components/componentlist" class="text-honda" target="_blank">images</a> directory.</p>
-            <p>For any feedback, please <a href="mailto:hondatabase@flaviopereira.dev?subject=Contribute to Honda ECU Component List" class="text-honda">e-mail</a> me.</p>
+            <p>You can download this list as JSON from the <a href="hondaecucomponents.json">same directory</a>.</p>
+            <p>To edit this list, visit the <a href="https://github.com/hondatabase/ecucomponents/edit/main/hondaecucomponents.json">JSON file on GitHub</a>.</p>
+            <p>To view the source images from which this data was extracted, visit the <a href="https://files.hondatabase.com/ecu-components/componentlist">images</a> directory.</p>
+            <p>For any feedback, please <a href="mailto:hondatabase@flaviopereira.dev?subject=Contribute to Honda ECU Component List">e-mail</a> me.</p>
         </small>
     </header>
     <main>
-        <h2 class="text-xl font-semibold">Components</h2>
-        <div id="table-container" class="overflow-x-auto">
-            <table class="min-w-full border-collapse table-auto sm:min-w-max">
+        <h2>Components</h2>
+        <div id="table-container">
+            <table>
                 <thead>
                     <tr>
-                        <th class="bg-gray-300 border border-black p-2 font-medium w-auto">ID(s)</th>
-                        <th class="bg-gray-300 border border-black p-2 font-medium">Type</th>
-                        <th class="bg-gray-300 border border-black p-2 font-medium">Specs</th>
+                        <th>ID(s)</th>
+                        <th>Type</th>
+                        <th>Specs</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
         </div>
-        <div id="legend" class="fixed bottom-0 left-0 p-1 px-2.5 text-sm bg-gray-200 w-full print:static border-t border-gray-300">
+        <div id="legend">
             <p class="inline">Boards:</p>
             <ul class="inline">
                 <li class="inline"><strong>OBD0</strong>: N/A</li>
@@ -95,9 +49,9 @@
         </div>
     </main>
     <footer>
-        <div id="credits" class="text-sm my-5">
-            <h2 class="text-lg font-semibold">Credits:</h2>
-            <ul class="m-0"></ul>
+        <div id="credits">
+            <h2>Credits:</h2>
+            <ul></ul>
         </div>
     </footer>
     <script src="script.js"></script>
