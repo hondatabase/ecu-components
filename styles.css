@@ -80,10 +80,6 @@ th {
         page-break-inside: avoid; 
     }
 
-    span.eletrical-spec { 
-        line-height: 2em; 
-    }
-
     #author {
         position: static;
         text-transform: uppercase;
