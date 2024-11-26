@@ -50,17 +50,6 @@ th {
     font-weight: 500;
 }
 
-#legend {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 0.25rem 0.625rem;
-    font-size: 0.875rem;
-    background-color: #e5e7eb;
-    width: 100%;
-    border-top: 1px solid #d1d5db;
-}
-
 #credits {
     font-size: 0.875rem;
     margin: 1.25rem 0;
@@ -98,10 +87,6 @@ th {
     #author {
         position: static;
         text-transform: uppercase;
-    }
-
-    #legend { 
-        position: static; 
     }
 }
 
