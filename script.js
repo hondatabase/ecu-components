@@ -56,6 +56,7 @@ fetch('./hondaecucomponents.json')
 
             if (componentsNode.notes && componentsNode.notes !== '') {
                 const notesRow = document.createElement('tr');
+                const notesCell = document.createElement('td');
                 notesCell.colSpan = 3;
                 notesCell.className = 'notes-cell';
                 notesCell.innerHTML = componentsNode.notes;
@@ -83,4 +84,4 @@ fetch('./hondaecucomponents.json')
                 credits.appendChild(li);
             });
         }
-    }).catch(() => {});
+    }).catch(err => console.error('Failed to load components:', err));
