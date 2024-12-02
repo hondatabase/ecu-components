@@ -233,8 +233,8 @@
 				"C87"
 			],
 			"type": "Capacitor",
-			"specs": "PSP",
-			"notes": ""
+			"specs": "Ceramic .01 (103)",
+			"notes": "PSP Related"
 		},
 		{
 			"ids": [
@@ -407,13 +407,14 @@
 			],
 			"type": "Supressor",
 			"specs": "1AZ24/1.5KE20A, (21 V)",
-			"notes": "Protects IC17 (circuit, v)ery rare to mount."
+			"notes": "Protects IC17 (circuit, very rare to mount.)"
 		},
 		{
 			"ids": [
 				"DM1",
 				"DM2",
-				"DM3"
+				"DM3",
+				"DM4"
 			],
 			"type": "Transistor",
 			"specs": "S233 IT",
@@ -434,9 +435,9 @@
 			"ids": [
 				"DM4"
 			],
-			"type": "PSP SWITCH",
-			"specs": "",
-			"notes": ""
+			"type": "Transistor",
+			"specs": "S233 IT",
+			"notes": "PSP - Related - Double Diode to prevent overload on circuit."
 		},
 		{
 			"ids": [
@@ -935,7 +936,7 @@
 				"Q41"
 			],
 			"type": "PNP Transistor",
-			"specs": "A1175\u00c2\u00b0",
+			"specs": "A1175",
 			"notes": "PSP RELATED SWITCH",
 			"boards": [
 				"11F0"
@@ -1164,19 +1165,21 @@
 		},
 		{
 			"ids": [
-				"R99"
-			],
-			"type": "Resistor",
-			"specs": "PSP RELATED",
-			"notes": "To correct idle"
-		},
-		{
-			"ids": [
+				"R99",
 				"R101"
 			],
 			"type": "Resistor",
-			"specs": "PSP RELATED option",
-			"notes": "Idle when used steering wheel"
+			"specs": "22K OHM",
+			"notes": "PSP Related - To correct idle"
+		},
+		{
+			"ids": [
+				"R100",
+				"R102"
+			],
+			"type": "Resistor",
+			"specs": "4K7 OHM",
+			"notes": "PSP Related - Idle when used steering wheel"
 		},
 		{
 			"ids": [
