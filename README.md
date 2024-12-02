@@ -1,12 +1,12 @@
 # Honda OBD0/1 ECU Component List
 
-<https://ecucomponents.hondatabase.com>
+<https://ecu-components.hondatabase.com>
 
 This repository contains a comprehensive list of components found in Honda OBD0 and OBD1 ECUs. Compiled from various sources, it serves as a reference for those working with Honda ECUs.
 
 ## Overview
 
-The project provides a searchable web interface for Honda ECU components at <https://ecucomponents.hondatabase.com>. The database includes:
+The project provides a searchable web interface for Honda ECU components at <https://ecu-components.hondatabase.com>. The database includes:
 
 - Component IDs and types
 - Technical specifications
@@ -25,7 +25,7 @@ The project provides a searchable web interface for Honda ECU components at <htt
 
 Access the component database in two ways:
 
-1. View the searchable interface at <https://ecucomponents.hondatabase.com>
+1. View the searchable interface at <https://ecu-components.hondatabase.com>
 2. Download the raw JSON data from [hondaecucomponents.json](hondaecucomponents.json)
 
 ## Contributing
