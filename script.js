@@ -84,6 +84,27 @@ fetch('./hondaecucomponents.json')
                 credits.appendChild(li);
             });
         }
+
+        // Add GitHub contributors
+        fetch('https://api.github.com/repos/Hondatabase/ecu-components/contributors')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch contributors');
+            return response.json();
+        })
+        .then(contributors => contributors.forEach(contributor => {
+            if (contributor.login === 'VIRUXE') return; // already on the static list
+
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = contributor.html_url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.className = 'honda-link';
+            a.innerHTML = contributor.login;
+            li.appendChild(a);
+            credits.appendChild(li);
+        }))
+        .catch(error => console.error('Error fetching GitHub contributors:', error));
     }).catch(err => console.error('Failed to load components:', err));
 
 document.getElementById('componentSearch').addEventListener('input', e => {
