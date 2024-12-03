@@ -139,7 +139,6 @@
 		},
 		{
 			"ids": [
-				"C40",
 				"C71"
 			],
 			"type": "Capacitor",
@@ -181,17 +180,6 @@
 			"type": "Capacitor",
 			"specs": "(100 pF Ceramic)",
 			"notes": "Digital Test Circuit"
-		},
-		{
-			"ids": [
-				"C60"
-			],
-			"type": "Capacitor",
-			"specs": "(1 uF Polar)",
-			"notes": "",
-			"boards": [
-				"11F0"
-			]
 		},
 		{
 			"ids": [
@@ -299,26 +287,6 @@
 				"D11"
 			],
 			"type": "Diode",
-			"specs": "1N4002",
-			"notes": "",
-			"boards": [
-				"11F0"
-			]
-		},
-		{
-			"ids": [
-				"D11",
-				"D14"
-			],
-			"type": "Diode",
-			"specs": "1N4002, (100 V) (1/4/0.25 W)",
-			"notes": "PWM"
-		},
-		{
-			"ids": [
-				"D11"
-			],
-			"type": "Diode",
 			"specs": "1N4001 (50 V)",
 			"notes": "VTEC with high switch SK5151S",
 			"boards": [
@@ -329,7 +297,6 @@
 		},
 		{
 			"ids": [
-				"D11",
 				"D3",
 				"D7"
 			],
@@ -341,17 +308,10 @@
 			"ids": [
 				"D14"
 			],
-			"type": "Diode",
-			"specs": "1N4002",
-			"notes": ""
-		},
-		{
-			"ids": [
-				"D14"
-			],
 			"type": "Zener Diode",
 			"specs": "1N5230BTR (4.7 V) 1N5261BTR (4.7 V)",
-			"notes": "Must be under the Transistor C-E voltage"
+			"notes": "Must be under the Transistor C-E voltage",
+			"boards": "11F0"
 		},
 		{
 			"ids": [
@@ -413,8 +373,7 @@
 			"ids": [
 				"DM1",
 				"DM2",
-				"DM3",
-				"DM4"
+				"DM3"
 			],
 			"type": "Transistor",
 			"specs": "S233 IT",
@@ -465,8 +424,7 @@
 		},
 		{
 			"ids": [
-				"IC11",
-				"RM4"
+				"IC11"
 			],
 			"type": "",
 			"specs": "Current measurement circuit",
@@ -559,22 +517,6 @@
 		},
 		{
 			"ids": [
-				"IC4"
-			],
-			"type": "Integrated circuit",
-			"specs": "74HC373N/MC/MM",
-			"notes": "20 PIN. You need a socket for it."
-		},
-		{
-			"ids": [
-				"IC4"
-			],
-			"type": "",
-			"specs": "NEC EC-BACK0003-454",
-			"notes": "Backup Memory"
-		},
-		{
-			"ids": [
 				"IC5"
 			],
 			"type": "Integrated Switch Circuit",
@@ -620,7 +562,6 @@
 		{
 			"ids": [
 				"Q10",
-				"Q11",
 				"Q12",
 				"Q13",
 				"Q46"
@@ -634,17 +575,6 @@
 				"Q101"
 			],
 			"type": "PNP Transistor",
-			"specs": "NTE2368 / FJN4305 / BC556 (ECB pinout)",
-			"notes": "NTE2368/R4305 are with EBC pinout",
-			"boards": [
-				"11F0"
-			]
-		},
-		{
-			"ids": [
-				"Q101"
-			],
-			"type": "Transistor",
 			"specs": "11FO BOARD P28,P06..A143XSZ FJN4305/NTE2368/",
 			"notes": "PNP Transistor A1048/2SB1030, are with ECB pin holder (R4305)(dta) Transistors.",
 			"boards": [
@@ -665,7 +595,7 @@
 				"Q11"
 			],
 			"type": "Transistor",
-			"specs": "NECB965 NPN",
+			"specs": "NECB965 NPN (A143XSA)",
 			"notes": "Green Color"
 		},
 		{
@@ -675,17 +605,6 @@
 			"type": "PNP Transistor",
 			"specs": "DTA143XSA",
 			"notes": ""
-		},
-		{
-			"ids": [
-				"Q17"
-			],
-			"type": "Transistor",
-			"specs": "",
-			"notes": "IAB Transistor > Interlock output > Intake air butterfly's",
-			"boards": [
-				"1980"
-			]
 		},
 		{
 			"ids": [
@@ -703,24 +622,8 @@
 				"Q20"
 			],
 			"type": "PNP Transistor",
-			"specs": "A143XSA",
-			"notes": "2SB1030, PWM digital"
-		},
-		{
-			"ids": [
-				"Q20"
-			],
-			"type": "PNP Transistor",
-			"specs": "B1030",
-			"notes": ""
-		},
-		{
-			"ids": [
-				"Q20"
-			],
-			"type": "PNP Transistor",
-			"specs": "Digital",
-			"notes": "DTA143XSA/2SB1030"
+			"specs": "A143XSA/B1030/2SB1030",
+			"notes": "PWM Digital"
 		},
 		{
 			"ids": [
@@ -742,18 +645,6 @@
 			"type": "PNP Transistor",
 			"specs": "DTA144, A144 dta144xsa/esa NTE2361",
 			"notes": "Digital Test Circuit"
-		},
-		{
-			"ids": [
-				"Q26",
-				"Q37"
-			],
-			"type": "NPN Transistor",
-			"specs": "D1423 / C2785",
-			"notes": "",
-			"boards": [
-				"1980"
-			]
 		},
 		{
 			"ids": [
@@ -783,14 +674,6 @@
 			"ids": [
 				"Q29"
 			],
-			"type": "Transistor",
-			"specs": "3055T",
-			"notes": ""
-		},
-		{
-			"ids": [
-				"Q29"
-			],
 			"type": "MOSFET Transistor",
 			"specs": "(10 A) (60 V) (75 W)",
 			"notes": "MJE3055T PWM"
@@ -808,30 +691,6 @@
 				"Q30"
 			],
 			"type": "NPN Transistor",
-			"specs": "DTC144XSC/Z",
-			"notes": "",
-			"boards": [
-				"11F0",
-				"1720"
-			]
-		},
-		{
-			"ids": [
-				"Q30"
-			],
-			"type": "NPN Transistor",
-			"specs": "AIL4L / FJN3302RTA",
-			"notes": "",
-			"boards": [
-				"11F0",
-				"1720"
-			]
-		},
-		{
-			"ids": [
-				"Q30"
-			],
-			"type": "NPN Transistor",
 			"specs": "Built-in bias resistor",
 			"notes": "AIL4L on the \"1720 BOARD\". Replacement: \"FJN3302RTA\". DTC144XSC on the \"11FO BOARD\". Option to D14 A/F 5V reading.",
 			"boards": [
@@ -843,17 +702,9 @@
 			"ids": [
 				"Q31"
 			],
-			"type": "Transistor",
-			"specs": "2SD1780 (RACT-ND)",
-			"notes": "EVAP (PCS)"
-		},
-		{
-			"ids": [
-				"Q31"
-			],
 			"type": "SANKEN Transistor",
-			"specs": "D1796",
-			"notes": "Black Color"
+			"specs": "D1796 / 2SD1780 (RACT-ND)",
+			"notes": "EVAP (PCS) - Black Color"
 		},
 		{
 			"ids": [
@@ -861,8 +712,8 @@
 				"R135"
 			],
 			"type": "",
-			"specs": "INTERLOCK",
-			"notes": "(A/T) Q17/Q34 together output."
+			"specs": "R135 is (10 OHM) (0.25 W)",
+			"notes": "(A/T) Q17/Q34 output together."
 		},
 		{
 			"ids": [
@@ -886,8 +737,9 @@
 			],
 			"type": "NPN Transistor",
 			"specs": "Digital SK5151 high side switch",
-			"notes": "Used with IC14 only, not needed with IC14 and IC13. Prevents ROM disappearing. 2SD1430/2SC2785* P28/P06. 2SD1423 P30 C2785*.",
+			"notes": "Prevents ROM disappearing. 2SD1430/2SC2785* P28/P06. 2SD1423 P30 C2785*. D1423/C2785 on board 1980",
 			"boards": [
+				"1980",
 				"11F0"
 			]
 		},
@@ -897,16 +749,7 @@
 			],
 			"type": "NPN Transistor",
 			"specs": "C2240 GR1K",
-			"notes": ""
-		},
-		{
-			"ids": [
-				"Q38",
-				"Q39"
-			],
-			"type": "NPN Transistor",
-			"specs": "Ignition",
-			"notes": "",
+			"notes": "Ignition",
 			"boards": [
 				"11F0",
 				"1720"
@@ -918,7 +761,11 @@
 			],
 			"type": "NPN Transistor",
 			"specs": "C144ESA",
-			"notes": ""
+			"notes": "Ignition",
+			"boards": [
+				"11F0",
+				"1720"
+			]
 		},
 		{
 			"ids": [
@@ -944,12 +791,12 @@
 		},
 		{
 			"ids": [
-				"Q41",
 				"Q42"
 			],
 			"type": "NEC Transistor",
 			"specs": "A1442",
-			"notes": "Green Color"
+			"notes": "Green Color",
+			"boards": ["11F0"]
 		},
 		{
 			"ids": [
@@ -957,17 +804,6 @@
 			],
 			"type": "Transistor",
 			"specs": "J103GR1",
-			"notes": ""
-		},
-		{
-			"ids": [
-				"Q6",
-				"Q7",
-				"Q8",
-				"Q9"
-			],
-			"type": "PNP Transistor",
-			"specs": "A143XSA",
 			"notes": ""
 		},
 		{
@@ -986,17 +822,9 @@
 				"QM1",
 				"QM2"
 			],
-			"type": "NPN Transistor Array",
-			"specs": "INJECTOR DRIVER",
-			"notes": "SK STA460C"
-		},
-		{
-			"ids": [
-				"QM1"
-			],
-			"type": "SANKEN MODULE",
-			"specs": "SLA4010",
-			"notes": "Black Color/MULTY PIN"
+			"type": "(Needs confirmation!) NPN Transistor Array/Sanken Module",
+			"specs": "(Needs confirmation!) INJECTOR DRIVER/SLA4010",
+			"notes": "(Needs confirmation!) SK STA460C - Black Color/MULTY PIN"
 		},
 		{
 			"ids": [
@@ -1051,28 +879,12 @@
 				"R54"
 			],
 			"type": "Resistor",
-			"specs": "(1.0k OHM) (0.25 W)",
-			"notes": ""
-		},
-		{
-			"ids": [
-				"R54"
-			],
-			"type": "Resistor",
-			"specs": "(1k OHM) (1/4 W)",
+			"specs": "(1k OHM) (1/4 W - needs confirmation)",
 			"notes": ""
 		},
 		{
 			"ids": [
 				"R66",
-				"R67"
-			],
-			"type": "Resistor",
-			"specs": "(820 OHM) (0.25 W)",
-			"notes": ""
-		},
-		{
-			"ids": [
 				"R67"
 			],
 			"type": "Resistor",
@@ -1089,27 +901,11 @@
 		},
 		{
 			"ids": [
-				"R70"
-			],
-			"type": "Resistor",
-			"specs": "(220 OHM)",
-			"notes": ""
-		},
-		{
-			"ids": [
 				"R71"
 			],
 			"type": "Resistor",
 			"specs": "(330 OHM) (0.25 W)",
 			"notes": "EGR solenoid between the wastegate and turbo cold side/not after the TB."
-		},
-		{
-			"ids": [
-				"R71"
-			],
-			"type": "Resistor",
-			"specs": "(330 OHM)",
-			"notes": ""
 		},
 		{
 			"ids": [
@@ -1194,15 +990,6 @@
 		},
 		{
 			"ids": [
-				"R107",
-				"R93"
-			],
-			"type": "Resistor",
-			"specs": "",
-			"notes": ""
-		},
-		{
-			"ids": [
 				"R107"
 			],
 			"type": "Resistor",
@@ -1219,14 +1006,6 @@
 			"type": "",
 			"specs": "",
 			"notes": "Knock Board related"
-		},
-		{
-			"ids": [
-				"R135"
-			],
-			"type": "Resistor",
-			"specs": "(10 OHM) (0.25 W)",
-			"notes": "Engine mount control between with Q34"
 		},
 		{
 			"ids": [
@@ -1254,9 +1033,7 @@
 		},
 		{
 			"ids": [
-				"R142",
-				"R143",
-				"R144"
+				"R142"
 			],
 			"type": "Resistor",
 			"specs": "(10k OHM) (0.25 W)",
@@ -1267,19 +1044,14 @@
 		},
 		{
 			"ids": [
-				"R142"
-			],
-			"type": "Resistor",
-			"specs": "(10k OHM) (0.25 W)",
-			"notes": ""
-		},
-		{
-			"ids": [
 				"R143"
 			],
 			"type": "Resistor",
-			"specs": "(51k OHM) (0.25 W)",
-			"notes": ""
+			"specs": "(51K OHM) (0.25 W)",
+			"notes": "Not sure about 51K OHM...",
+			"boards": [
+				"1980"
+			]
 		},
 		{
 			"ids": [
@@ -1287,7 +1059,10 @@
 			],
 			"type": "Resistor",
 			"specs": "(12k OHM) (0.25 W)",
-			"notes": ""
+			"notes": "",
+			"boards": [
+				"1980"
+			]
 		},
 		{
 			"ids": [
@@ -1344,7 +1119,7 @@
 			],
 			"type": "Resistor Array",
 			"specs": "(4.7k OHM)",
-			"notes": ""
+			"notes": "IACV. Current measurement circuit?"
 		},
 		{
 			"ids": [
@@ -1383,16 +1158,8 @@
 				"XTL1"
 			],
 			"type": "",
-			"specs": "10akss4b, 10 MHz",
-			"notes": "Quartz Crystal Resonator"
-		},
-		{
-			"ids": [
-				"XTL1"
-			],
-			"type": "",
-			"specs": "7.90KSSOG, 7.90 Mhz",
-			"notes": "Quartz Crystal Resonator"
+			"specs": "10akss4b, 10 MHz / 7.90KSSOG, 7.90 Mhz",
+			"notes": "Quartz Crystal Resonator. Specs need to be confirmed."
 		},
 		{
 			"ids": [
