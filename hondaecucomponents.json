@@ -63,7 +63,7 @@
 			"ids": [
 				"C14"
 			],
-			"type": "Condensator",
+			"type": "Condenser",
 			"specs": "(220 uF) (35 V)",
 			"notes": "Low ESR RADIAL HF"
 		},
@@ -73,7 +73,7 @@
 				"C19",
 				"C21"
 			],
-			"type": "Condensator",
+			"type": "Condenser",
 			"specs": "(33 uF) (35 V)",
 			"notes": "Low ESR RADIAL HF"
 		},
@@ -81,7 +81,7 @@
 			"ids": [
 				"C18"
 			],
-			"type": "Condensator",
+			"type": "Condenser",
 			"specs": "(220 uF) (10 V)",
 			"notes": "Low ESR RADIAL HF"
 		},
@@ -89,7 +89,7 @@
 			"ids": [
 				"C201"
 			],
-			"type": "Condensator",
+			"type": "Condenser",
 			"specs": "(100 uF) (35 V)",
 			"notes": "Low ESR RADIAL HF"
 		},
@@ -97,7 +97,7 @@
 			"ids": [
 				"C24"
 			],
-			"type": "Condensator",
+			"type": "Condenser",
 			"specs": "(47 uF) (10 V)",
 			"notes": "Low ESR RADIAL HF"
 		},
@@ -133,7 +133,7 @@
 			"ids": [
 				"C40"
 			],
-			"type": "Condensator",
+			"type": "Condenser",
 			"specs": "(100 uF) (10 V)",
 			"notes": "Low ESR RADIAL HF"
 		},
