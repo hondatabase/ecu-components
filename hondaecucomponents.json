@@ -309,9 +309,9 @@
 				"D14"
 			],
 			"type": "Zener Diode",
-			"specs": "1N5230BTR (4.7 V) 1N5261BTR (4.7 V)",
+			"specs": "1N5230BTR (4.7 V), 1N5261BTR (4.7 V)",
 			"notes": "Must be under the Transistor C-E voltage",
-			"boards": "11F0"
+			"boards": ["11F0"]
 		},
 		{
 			"ids": [
