@@ -56,14 +56,11 @@ th {
 }
 
 @media print {
-    body { 
-        font-size: 0.8rem !important; 
-    }
+    @page { margin: 1em; }
 
-    header p, 
-    header small { 
-        display: none; 
-    }
+    body { font-size: 0.8rem !important; }
+
+    header p, header small { display: none; }
 
     a {
         color: inherit;
@@ -76,9 +73,7 @@ th {
         margin-bottom: 2em; 
     }
 
-    tr { 
-        page-break-inside: avoid; 
-    }
+    tr { page-break-inside: avoid; }
 
     #author {
         position: static;
@@ -109,7 +104,7 @@ th {
     border: 1px solid black;
     padding: 0.5rem;
     text-align: left;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
 }
 
 .component-name {
