@@ -704,7 +704,7 @@
 			],
 			"type": "SANKEN Transistor",
 			"specs": "D1796 / 2SD1780 (RACT-ND)",
-			"notes": "EVAP (PCS) - Black Color"
+			"notes": "EVAP (PCS) - Black Color.\nFrom <b>Jason Katman</b>: 'A common component that burns up when you have the EVAP purge solenoid mis-plugged into the IAT sensor. It doesn’t usually throw a CEL code unless the IAT melts pretty bad. I’d pull your IAT off and see if the tip has melted.'"
 		},
 		{
 			"ids": [

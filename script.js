@@ -59,7 +59,8 @@ fetch('./hondaecucomponents.json')
                 const notesCell = document.createElement('td');
                 notesCell.colSpan = 3;
                 notesCell.className = 'notes-cell';
-                notesCell.innerHTML = componentsNode.notes;
+                notesCell.innerHTML = componentsNode.notes.replace(/\n/g, '<br>');
+
                 notesRow.appendChild(notesCell);
                 componentTbody.appendChild(notesRow);
             }
